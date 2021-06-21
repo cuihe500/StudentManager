@@ -1,0 +1,44 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+D:/c++/studentManager/src/File.cpp
+head/File.h
+D:/c++/studentManager/src/head/File.h
+
+D:/c++/studentManager/src/head/File.h
+iostream
+-
+utility
+-
+vector
+-
+class.h
+D:/c++/studentManager/src/head/class.h
+io.h
+-
+util.h
+D:/c++/studentManager/src/head/util.h
+
+D:/c++/studentManager/src/head/class.h
+iostream
+-
+vector
+-
+student.h
+D:/c++/studentManager/src/head/student.h
+
+D:/c++/studentManager/src/head/student.h
+iostream
+-
+
+D:/c++/studentManager/src/head/util.h
+iostream
+-
+vector
+-
+
