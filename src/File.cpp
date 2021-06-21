@@ -14,7 +14,7 @@ vector<string> File::getAllDiretorys() {
     {
         while(_findnext(hFile, &fileInfo) == 0){
             if ((fileInfo.attrib & _A_SUBDIR)) {
-                if(strcmp(fileInfo.name, ".") != 0 && strcmp(fileInfo.name, "..") != 0)
+//                if(strcmp(fileInfo.name, ".") != 0 && strcmp(fileInfo.name, "..") != 0)
                 files.emplace_back(fileInfo.name);
             }
         }
@@ -46,7 +46,20 @@ vector<string> File::getAllFiles() {
 }
 
 bool File::writeStudent(classes classes, student stud) {
-    return false;
+    ofstream ofstream1;
+    ofstream1.open(path+classes.getName()+stud.getName());
+    if(!ofstream1.is_open()){
+        return false;
+    }
+    ofstream1 <<stud.getId()<<"."
+    <<"姓名:"<<stud.getName()<<"    "
+    <<"性别:"<<stud.getSex()<<"   "
+    <<"学号:"<<stud.getStudentId()<<" "
+    <<"成绩:"<<stud.getResult()<<"    "
+    <<"电话号:"<<stud.getPhone();
+    ofstream1.close();
+    return true;
+
 }
 
 bool File::writeAllStudents(classes classes) {

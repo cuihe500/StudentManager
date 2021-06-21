@@ -8,6 +8,7 @@
 #include <vector>
 #include "class.h"
 #include <io.h>
+#include <fstream>
 #include "util.h"
 #define STUDENTMANAGER_FILE_H
 

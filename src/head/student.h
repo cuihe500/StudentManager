@@ -25,8 +25,8 @@ private:
 
 public:
     //全信息构造函数
-    student(int id, const string &studentId, const string &name, const string &sex, const double &result,
-            const string &phone) : ID(id), studentId(studentId), name(name), sex(sex), result(result), phone(phone) {};
+    student(const string &studentId, const string &name, const string &sex, const double &result,
+            const string &phone) :  studentId(studentId), name(name), sex(sex), result(result), phone(phone) {};
     //无参构造函数
     student() {};
 

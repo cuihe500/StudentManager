@@ -6,8 +6,10 @@
 
 #IncludeRegexTransform: 
 
-D:/c++/studentManager/src/File.cpp
-head/File.h
+D:/c++/studentManager/main.cpp
+iostream
+-
+src/head/File.h
 D:/c++/studentManager/src/head/File.h
 
 D:/c++/studentManager/src/head/File.h
@@ -20,6 +22,8 @@ vector
 class.h
 D:/c++/studentManager/src/head/class.h
 io.h
+-
+fstream
 -
 util.h
 D:/c++/studentManager/src/head/util.h
