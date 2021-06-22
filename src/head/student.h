@@ -1,5 +1,5 @@
 //
-// Created by å´”æ˜Œèµ« on 2021/6/21.
+// Created by ´Ş²ıºÕ on 2021/6/21.
 //
 
 #ifndef STUDENTMANAGER_STUDENT_H
@@ -11,26 +11,26 @@ using namespace std;
 
 
 /*
- * è¿™ä¸ªå¤´æ–‡ä»¶æ˜¯å¯¹å•ä¸ªå­¦ç”Ÿä¿¡æ¯è¿›è¡ŒæŠ½è±¡å°è£…
+ * Õâ¸öÍ·ÎÄ¼şÊÇ¶Ôµ¥¸öÑ§ÉúĞÅÏ¢½øĞĞ³éÏó·â×°
  * */
 
 class student{
 private:
-    int ID; //è¿™ä¸ªæ˜¯åºå· åˆ°æ—¶å€™ä¼šä¼šè‡ªåŠ¨æ’åº
-    string studentId;//å­¦å·
-    string name;//å­¦ç”Ÿå§“å
-    string sex;//æ€§åˆ«
-    double result;//æˆç»©
-    string phone;//ç”µè¯
+    int ID; //Õâ¸öÊÇĞòºÅ µ½Ê±ºò»á»á×Ô¶¯ÅÅĞò
+    string studentId;//Ñ§ºÅ
+    string name;//Ñ§ÉúĞÕÃû
+    string sex;//ĞÔ±ğ
+    double result;//³É¼¨
+    string phone;//µç»°
 
 public:
-    //å…¨ä¿¡æ¯æ„é€ å‡½æ•°
+    //È«ĞÅÏ¢¹¹Ôìº¯Êı
     student(const string &studentId, const string &name, const string &sex, const double &result,
             const string &phone) :  studentId(studentId), name(name), sex(sex), result(result), phone(phone) {};
-    //æ— å‚æ„é€ å‡½æ•°
+    //ÎŞ²Î¹¹Ôìº¯Êı
     student() {};
 
-    //get&setæ¥å£
+    //get&set½Ó¿Ú
 
     int getId() const {
         return ID;

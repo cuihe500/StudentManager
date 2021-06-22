@@ -6,13 +6,13 @@
 
 #IncludeRegexTransform: 
 
-D:/c++/studentManager/main.cpp
+C:/Users/Watcher-7/Downloads/Compressed/StudentManager-main/main.cpp
 iostream
 -
 src/head/File.h
-D:/c++/studentManager/src/head/File.h
+C:/Users/Watcher-7/Downloads/Compressed/StudentManager-main/src/head/File.h
 
-D:/c++/studentManager/src/head/File.h
+C:/Users/Watcher-7/Downloads/Compressed/StudentManager-main/src/head/File.h
 iostream
 -
 utility
@@ -20,27 +20,29 @@ utility
 vector
 -
 class.h
-D:/c++/studentManager/src/head/class.h
+C:/Users/Watcher-7/Downloads/Compressed/StudentManager-main/src/head/class.h
 io.h
 -
 fstream
 -
 util.h
-D:/c++/studentManager/src/head/util.h
+C:/Users/Watcher-7/Downloads/Compressed/StudentManager-main/src/head/util.h
+windows.h
+-
 
-D:/c++/studentManager/src/head/class.h
+C:/Users/Watcher-7/Downloads/Compressed/StudentManager-main/src/head/class.h
 iostream
 -
 vector
 -
 student.h
-D:/c++/studentManager/src/head/student.h
+C:/Users/Watcher-7/Downloads/Compressed/StudentManager-main/src/head/student.h
 
-D:/c++/studentManager/src/head/student.h
+C:/Users/Watcher-7/Downloads/Compressed/StudentManager-main/src/head/student.h
 iostream
 -
 
-D:/c++/studentManager/src/head/util.h
+C:/Users/Watcher-7/Downloads/Compressed/StudentManager-main/src/head/util.h
 iostream
 -
 vector

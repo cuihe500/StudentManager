@@ -1,5 +1,5 @@
 //
-// Created by å´”æ˜Œèµ« on 2021/6/21.
+// Created by ´Ş²ıºÕ on 2021/6/21.
 //
 
 #ifndef STUDENTMANAGER_FILE_H
@@ -10,6 +10,7 @@
 #include <io.h>
 #include <fstream>
 #include "util.h"
+#include <windows.h>
 #define STUDENTMANAGER_FILE_H
 
 
@@ -21,12 +22,12 @@ private:
 public:
     File(const string &path);
 
-    vector<string> getAllDiretorys();//è·å–å­¦ç”Ÿå­˜å‚¨ç›®å½•ä¸‹æ‰€æœ‰æ–‡ä»¶å¤¹çš„åå­—
-    vector<string> getAllFiles();//è·å–å­¦ç”Ÿå­˜å‚¨ç›®å½•ä¸‹æ‰€æœ‰æ–‡ä»¶çš„åå­—
-    bool writeStudent(classes classes,student stud);//å°†ä¸€ä¸ªå­¦ç”Ÿå†™å…¥åˆ°æ–‡ä»¶
-    bool writeAllStudents(classes classes);//å°†ä¸€ä¸ªç­çº§çš„æ‰€æœ‰å­¦ç”Ÿå†™å…¥åˆ°æ–‡ä»¶
-    student readStudent(classes classes,string studentName);//è¯»å–ä¸€ä¸ªå­¦ç”Ÿåˆ°ç¨‹åºä¸­
-    vector<student> readAllStudent(classes classes);//è¯»å–ä¸€ä¸ªç­çº§çš„å­¦ç”Ÿåˆ°ç¨‹åºä¸­
+    vector<string> getAllDiretorys();//»ñÈ¡Ñ§Éú´æ´¢Ä¿Â¼ÏÂËùÓĞÎÄ¼ş¼ĞµÄÃû×Ö
+    vector<string> getAllFiles();//»ñÈ¡Ñ§Éú´æ´¢Ä¿Â¼ÏÂËùÓĞÎÄ¼şµÄÃû×Ö
+    bool writeStudent(classes classes,student stud);//½«Ò»¸öÑ§ÉúĞ´Èëµ½ÎÄ¼ş
+    bool writeAllStudents(classes classes);//½«Ò»¸ö°à¼¶µÄËùÓĞÑ§ÉúĞ´Èëµ½ÎÄ¼ş
+    student readStudent(classes classes,string studentName);//¶ÁÈ¡Ò»¸öÑ§Éúµ½³ÌĞòÖĞ
+    vector<student> readAllStudent(classes classes);//¶ÁÈ¡Ò»¸ö°à¼¶µÄÑ§Éúµ½³ÌĞòÖĞ
 };
 
 

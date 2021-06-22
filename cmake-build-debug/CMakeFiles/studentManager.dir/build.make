@@ -37,19 +37,19 @@ NULL=nul
 SHELL = cmd.exe
 
 # The CMake executable.
-CMAKE_COMMAND = "D:\Program Files\CLion 2021.1.2\bin\cmake\win\bin\cmake.exe"
+CMAKE_COMMAND = "C:\Program Files\JetBrains\CLion 2021.1.2\bin\cmake\win\bin\cmake.exe"
 
 # The command to remove a file.
-RM = "D:\Program Files\CLion 2021.1.2\bin\cmake\win\bin\cmake.exe" -E rm -f
+RM = "C:\Program Files\JetBrains\CLion 2021.1.2\bin\cmake\win\bin\cmake.exe" -E rm -f
 
 # Escaping for special characters.
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = D:\c++\studentManager
+CMAKE_SOURCE_DIR = C:\Users\Watcher-7\Downloads\Compressed\StudentManager-main
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = D:\c++\studentManager\cmake-build-debug
+CMAKE_BINARY_DIR = C:\Users\Watcher-7\Downloads\Compressed\StudentManager-main\cmake-build-debug
 
 # Include any dependencies generated for this target.
 include CMakeFiles\studentManager.dir\depend.make
@@ -62,78 +62,78 @@ include CMakeFiles\studentManager.dir\flags.make
 
 CMakeFiles\studentManager.dir\main.cpp.obj: CMakeFiles\studentManager.dir\flags.make
 CMakeFiles\studentManager.dir\main.cpp.obj: ..\main.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=D:\c++\studentManager\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/studentManager.dir/main.cpp.obj"
-	"D:\Program Files\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.28.29910\bin\Hostx86\x86\cl.exe" @<<
- /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoCMakeFiles\studentManager.dir\main.cpp.obj /FdCMakeFiles\studentManager.dir\ /FS -c D:\c++\studentManager\main.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Watcher-7\Downloads\Compressed\StudentManager-main\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/studentManager.dir/main.cpp.obj"
+	"D:\GC\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.28.29910\bin\Hostx86\x86\cl.exe" @<<
+ /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoCMakeFiles\studentManager.dir\main.cpp.obj /FdCMakeFiles\studentManager.dir\ /FS -c C:\Users\Watcher-7\Downloads\Compressed\StudentManager-main\main.cpp
 <<
 
 CMakeFiles\studentManager.dir\main.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/studentManager.dir/main.cpp.i"
-	"D:\Program Files\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.28.29910\bin\Hostx86\x86\cl.exe" > CMakeFiles\studentManager.dir\main.cpp.i @<<
- /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\c++\studentManager\main.cpp
+	"D:\GC\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.28.29910\bin\Hostx86\x86\cl.exe" > CMakeFiles\studentManager.dir\main.cpp.i @<<
+ /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\Watcher-7\Downloads\Compressed\StudentManager-main\main.cpp
 <<
 
 CMakeFiles\studentManager.dir\main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/studentManager.dir/main.cpp.s"
-	"D:\Program Files\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.28.29910\bin\Hostx86\x86\cl.exe" @<<
- /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoNUL /FAs /FaCMakeFiles\studentManager.dir\main.cpp.s /c D:\c++\studentManager\main.cpp
+	"D:\GC\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.28.29910\bin\Hostx86\x86\cl.exe" @<<
+ /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoNUL /FAs /FaCMakeFiles\studentManager.dir\main.cpp.s /c C:\Users\Watcher-7\Downloads\Compressed\StudentManager-main\main.cpp
 <<
 
 CMakeFiles\studentManager.dir\src\class.cpp.obj: CMakeFiles\studentManager.dir\flags.make
 CMakeFiles\studentManager.dir\src\class.cpp.obj: ..\src\class.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=D:\c++\studentManager\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/studentManager.dir/src/class.cpp.obj"
-	"D:\Program Files\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.28.29910\bin\Hostx86\x86\cl.exe" @<<
- /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoCMakeFiles\studentManager.dir\src\class.cpp.obj /FdCMakeFiles\studentManager.dir\ /FS -c D:\c++\studentManager\src\class.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Watcher-7\Downloads\Compressed\StudentManager-main\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/studentManager.dir/src/class.cpp.obj"
+	"D:\GC\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.28.29910\bin\Hostx86\x86\cl.exe" @<<
+ /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoCMakeFiles\studentManager.dir\src\class.cpp.obj /FdCMakeFiles\studentManager.dir\ /FS -c C:\Users\Watcher-7\Downloads\Compressed\StudentManager-main\src\class.cpp
 <<
 
 CMakeFiles\studentManager.dir\src\class.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/studentManager.dir/src/class.cpp.i"
-	"D:\Program Files\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.28.29910\bin\Hostx86\x86\cl.exe" > CMakeFiles\studentManager.dir\src\class.cpp.i @<<
- /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\c++\studentManager\src\class.cpp
+	"D:\GC\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.28.29910\bin\Hostx86\x86\cl.exe" > CMakeFiles\studentManager.dir\src\class.cpp.i @<<
+ /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\Watcher-7\Downloads\Compressed\StudentManager-main\src\class.cpp
 <<
 
 CMakeFiles\studentManager.dir\src\class.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/studentManager.dir/src/class.cpp.s"
-	"D:\Program Files\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.28.29910\bin\Hostx86\x86\cl.exe" @<<
- /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoNUL /FAs /FaCMakeFiles\studentManager.dir\src\class.cpp.s /c D:\c++\studentManager\src\class.cpp
+	"D:\GC\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.28.29910\bin\Hostx86\x86\cl.exe" @<<
+ /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoNUL /FAs /FaCMakeFiles\studentManager.dir\src\class.cpp.s /c C:\Users\Watcher-7\Downloads\Compressed\StudentManager-main\src\class.cpp
 <<
 
 CMakeFiles\studentManager.dir\src\File.cpp.obj: CMakeFiles\studentManager.dir\flags.make
 CMakeFiles\studentManager.dir\src\File.cpp.obj: ..\src\File.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=D:\c++\studentManager\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/studentManager.dir/src/File.cpp.obj"
-	"D:\Program Files\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.28.29910\bin\Hostx86\x86\cl.exe" @<<
- /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoCMakeFiles\studentManager.dir\src\File.cpp.obj /FdCMakeFiles\studentManager.dir\ /FS -c D:\c++\studentManager\src\File.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Watcher-7\Downloads\Compressed\StudentManager-main\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/studentManager.dir/src/File.cpp.obj"
+	"D:\GC\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.28.29910\bin\Hostx86\x86\cl.exe" @<<
+ /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoCMakeFiles\studentManager.dir\src\File.cpp.obj /FdCMakeFiles\studentManager.dir\ /FS -c C:\Users\Watcher-7\Downloads\Compressed\StudentManager-main\src\File.cpp
 <<
 
 CMakeFiles\studentManager.dir\src\File.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/studentManager.dir/src/File.cpp.i"
-	"D:\Program Files\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.28.29910\bin\Hostx86\x86\cl.exe" > CMakeFiles\studentManager.dir\src\File.cpp.i @<<
- /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\c++\studentManager\src\File.cpp
+	"D:\GC\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.28.29910\bin\Hostx86\x86\cl.exe" > CMakeFiles\studentManager.dir\src\File.cpp.i @<<
+ /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\Watcher-7\Downloads\Compressed\StudentManager-main\src\File.cpp
 <<
 
 CMakeFiles\studentManager.dir\src\File.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/studentManager.dir/src/File.cpp.s"
-	"D:\Program Files\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.28.29910\bin\Hostx86\x86\cl.exe" @<<
- /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoNUL /FAs /FaCMakeFiles\studentManager.dir\src\File.cpp.s /c D:\c++\studentManager\src\File.cpp
+	"D:\GC\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.28.29910\bin\Hostx86\x86\cl.exe" @<<
+ /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoNUL /FAs /FaCMakeFiles\studentManager.dir\src\File.cpp.s /c C:\Users\Watcher-7\Downloads\Compressed\StudentManager-main\src\File.cpp
 <<
 
 CMakeFiles\studentManager.dir\src\util.cpp.obj: CMakeFiles\studentManager.dir\flags.make
 CMakeFiles\studentManager.dir\src\util.cpp.obj: ..\src\util.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=D:\c++\studentManager\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/studentManager.dir/src/util.cpp.obj"
-	"D:\Program Files\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.28.29910\bin\Hostx86\x86\cl.exe" @<<
- /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoCMakeFiles\studentManager.dir\src\util.cpp.obj /FdCMakeFiles\studentManager.dir\ /FS -c D:\c++\studentManager\src\util.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Watcher-7\Downloads\Compressed\StudentManager-main\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/studentManager.dir/src/util.cpp.obj"
+	"D:\GC\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.28.29910\bin\Hostx86\x86\cl.exe" @<<
+ /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoCMakeFiles\studentManager.dir\src\util.cpp.obj /FdCMakeFiles\studentManager.dir\ /FS -c C:\Users\Watcher-7\Downloads\Compressed\StudentManager-main\src\util.cpp
 <<
 
 CMakeFiles\studentManager.dir\src\util.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/studentManager.dir/src/util.cpp.i"
-	"D:\Program Files\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.28.29910\bin\Hostx86\x86\cl.exe" > CMakeFiles\studentManager.dir\src\util.cpp.i @<<
- /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\c++\studentManager\src\util.cpp
+	"D:\GC\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.28.29910\bin\Hostx86\x86\cl.exe" > CMakeFiles\studentManager.dir\src\util.cpp.i @<<
+ /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\Watcher-7\Downloads\Compressed\StudentManager-main\src\util.cpp
 <<
 
 CMakeFiles\studentManager.dir\src\util.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/studentManager.dir/src/util.cpp.s"
-	"D:\Program Files\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.28.29910\bin\Hostx86\x86\cl.exe" @<<
- /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoNUL /FAs /FaCMakeFiles\studentManager.dir\src\util.cpp.s /c D:\c++\studentManager\src\util.cpp
+	"D:\GC\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.28.29910\bin\Hostx86\x86\cl.exe" @<<
+ /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoNUL /FAs /FaCMakeFiles\studentManager.dir\src\util.cpp.s /c C:\Users\Watcher-7\Downloads\Compressed\StudentManager-main\src\util.cpp
 <<
 
 # Object files for target studentManager
@@ -152,9 +152,9 @@ studentManager.exe: CMakeFiles\studentManager.dir\src\File.cpp.obj
 studentManager.exe: CMakeFiles\studentManager.dir\src\util.cpp.obj
 studentManager.exe: CMakeFiles\studentManager.dir\build.make
 studentManager.exe: CMakeFiles\studentManager.dir\objects1.rsp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=D:\c++\studentManager\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Linking CXX executable studentManager.exe"
-	"D:\Program Files\CLion 2021.1.2\bin\cmake\win\bin\cmake.exe" -E vs_link_exe --intdir=CMakeFiles\studentManager.dir --rc="D:\Windows Kits\10\bin\10.0.19041.0\x86\rc.exe" --mt="D:\Windows Kits\10\bin\10.0.19041.0\x86\mt.exe" --manifests -- "D:\Program Files\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.28.29910\bin\Hostx86\x86\link.exe" /nologo @CMakeFiles\studentManager.dir\objects1.rsp @<<
- /out:studentManager.exe /implib:studentManager.lib /pdb:D:\c++\studentManager\cmake-build-debug\studentManager.pdb /version:0.0 /machine:X86 /debug /INCREMENTAL /subsystem:console  kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib 
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=C:\Users\Watcher-7\Downloads\Compressed\StudentManager-main\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Linking CXX executable studentManager.exe"
+	"C:\Program Files\JetBrains\CLion 2021.1.2\bin\cmake\win\bin\cmake.exe" -E vs_link_exe --intdir=CMakeFiles\studentManager.dir --rc="D:\Windows Kits\10\bin\10.0.19041.0\x86\rc.exe" --mt="D:\Windows Kits\10\bin\10.0.19041.0\x86\mt.exe" --manifests -- "D:\GC\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.28.29910\bin\Hostx86\x86\link.exe" /nologo @CMakeFiles\studentManager.dir\objects1.rsp @<<
+ /out:studentManager.exe /implib:studentManager.lib /pdb:C:\Users\Watcher-7\Downloads\Compressed\StudentManager-main\cmake-build-debug\studentManager.pdb /version:0.0 /machine:X86 /debug /INCREMENTAL /subsystem:console  kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib 
 <<
 
 # Rule to build all files generated by this target.
@@ -167,6 +167,6 @@ CMakeFiles\studentManager.dir\clean:
 .PHONY : CMakeFiles\studentManager.dir\clean
 
 CMakeFiles\studentManager.dir\depend:
-	$(CMAKE_COMMAND) -E cmake_depends "NMake Makefiles" D:\c++\studentManager D:\c++\studentManager D:\c++\studentManager\cmake-build-debug D:\c++\studentManager\cmake-build-debug D:\c++\studentManager\cmake-build-debug\CMakeFiles\studentManager.dir\DependInfo.cmake --color=$(COLOR)
+	$(CMAKE_COMMAND) -E cmake_depends "NMake Makefiles" C:\Users\Watcher-7\Downloads\Compressed\StudentManager-main C:\Users\Watcher-7\Downloads\Compressed\StudentManager-main C:\Users\Watcher-7\Downloads\Compressed\StudentManager-main\cmake-build-debug C:\Users\Watcher-7\Downloads\Compressed\StudentManager-main\cmake-build-debug C:\Users\Watcher-7\Downloads\Compressed\StudentManager-main\cmake-build-debug\CMakeFiles\studentManager.dir\DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles\studentManager.dir\depend
 

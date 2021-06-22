@@ -1,87 +1,81 @@
 //
-// Created by å´”æ˜Œèµ« on 2021/6/21.
+// Created by ´Ş²ıºÕ on 2021/6/21.
 //
 
 #include "head/class.h"
 
 
 
-//å­¦ç”Ÿä¿¡æ¯CUDR
-void classes::add_Student(const student &temp) {
+//Ñ§ÉúĞÅÏ¢CUDR
+void classes::add_Student(student *temp) {
     studs.push_back(temp);
     sortAll();
 }
 
-void classes::inset_Student(const student &temp, int site) {
-    vector<student>::iterator it;
+void classes::inset_Student(student *temp, int site) {
+    vector<student *>::iterator it;
     studs.insert((it+=site),temp);
     sortAll();
 }
 
-student classes::search_via_ID(int id) {
-    vector<student>::iterator it;
-    student temp;
-    temp.setName("NULL!");//æ ‡è¯†ç¬¦ å¦‚æœå§“åä¸ºNULL!åˆ™è¯´æ˜æœªæŸ¥æ‰¾åˆ°
+student * classes::search_via_ID(int id) {
+    vector<student *>::iterator it;
     for(it=studs.begin();it!=studs.end();it++){
-        if(it->getId()==id){
+        if((*it)->getId()==id){
             return *it;
         }
     }
-    return temp;
+    return nullptr;
 }
 
-student classes::search_via_Name(const string& studentName) {
-    vector<student>::iterator it;
-    student temp;
-    temp.setName("NULL!");//æ ‡è¯†ç¬¦ å¦‚æœå§“åä¸ºNULL!åˆ™è¯´æ˜æœªæŸ¥æ‰¾åˆ°
+student * classes::search_via_Name(const string& studentName) {
+    vector<student *>::iterator it;
     for(it=studs.begin();it!=studs.end();it++){
-        if(it->getName()==studentName){
+        if((*it)->getName()==studentName){
             return *it;
         }
     }
-    return temp;
+    return nullptr;
 }
 
-student classes::search_via_StudentID(const string& studentID) {
-    vector<student>::iterator it;
+student * classes::search_via_StudentID(const string& studentID) {
+    vector<student *>::iterator it;
     student temp;
-    temp.setName("NULL!");//æ ‡è¯†ç¬¦ å¦‚æœå§“åä¸ºNULL!åˆ™è¯´æ˜æœªæŸ¥æ‰¾åˆ°
+    temp.setName("NULL!");//±êÊ¶·û Èç¹ûĞÕÃûÎªNULL!ÔòËµÃ÷Î´²éÕÒµ½
     for(it=studs.begin();it!=studs.end();it++){
-        if(it->getStudentId()==studentID){
+        if((*it)->getStudentId()==studentID){
             return *it;
         }
     }
-    return temp;
+    return nullptr;
 }
 
-student classes::search_via_Result(double result) {
-    vector<student>::iterator it;
-    student temp;
-    temp.setName("NULL!");//æ ‡è¯†ç¬¦ å¦‚æœå§“åä¸ºNULL!åˆ™è¯´æ˜æœªæŸ¥æ‰¾åˆ°
+student * classes::search_via_Result(double result) {
+    vector<student *>::iterator it;
     for(it=studs.begin();it!=studs.end();it++){
-        if(it->getResult()==result){
+        if((*it)->getResult()==result){
             return *it;
         }
     }
-    return temp;
+    return nullptr;
 }
 
-student classes::search_via_Phone(const string& phone) {
-    vector<student>::iterator it;
+student * classes::search_via_Phone(const string& phone) {
+    vector<student *>::iterator it;
     student temp;
-    temp.setName("NULL!");//æ ‡è¯†ç¬¦ å¦‚æœå§“åä¸ºNULL!åˆ™è¯´æ˜æœªæŸ¥æ‰¾åˆ°
+    temp.setName("NULL!");//±êÊ¶·û Èç¹ûĞÕÃûÎªNULL!ÔòËµÃ÷Î´²éÕÒµ½
     for(it=studs.begin();it!=studs.end();it++){
-        if(it->getPhone()==phone){
+        if((*it)->getPhone()==phone){
             return *it;
         }
     }
-    return temp;
+    return nullptr;
 }
 
 bool classes::delete_via_ID(int id) {
-    vector<student>::iterator it;
+    vector<student *>::iterator it;
     for(it=studs.begin();it!=studs.end();it++){
-        if(it->getId()==id){
+        if((*it)->getId()==id){
             studs.erase(it);
             sortAll();
             return true;
@@ -91,9 +85,9 @@ bool classes::delete_via_ID(int id) {
 }
 
 bool classes::delete_via_Name(const string& studentName) {
-    vector<student>::iterator it;
+    vector<student *>::iterator it;
     for(it=studs.begin();it!=studs.end();it++){
-        if(it->getName()==studentName){
+        if((*it)->getName()==studentName){
             studs.erase(it);
             sortAll();
             return true;
@@ -103,9 +97,9 @@ bool classes::delete_via_Name(const string& studentName) {
 }
 
 bool classes::delete_via_StudentID(const string& studentID) {
-    vector<student>::iterator it;
+    vector<student *>::iterator it;
     for(it=studs.begin();it!=studs.end();it++){
-        if(it->getStudentId()==studentID){
+        if((*it)->getStudentId()==studentID){
             studs.erase(it);
             sortAll();
             return true;
@@ -115,9 +109,9 @@ bool classes::delete_via_StudentID(const string& studentID) {
 }
 
 bool classes::delete_via_Result(double result) {
-    vector<student>::iterator it;
+    vector<student *>::iterator it;
     for(it=studs.begin();it!=studs.end();it++){
-        if(it->getResult()==result){
+        if((*it)->getResult()==result){
             studs.erase(it);
             sortAll();
             return true;
@@ -127,9 +121,9 @@ bool classes::delete_via_Result(double result) {
 }
 
 bool classes::delete_via_Phone(const string& phone) {
-    vector<student>::iterator it;
+    vector<student *>::iterator it;
     for(it=studs.begin();it!=studs.end();it++){
-        if(it->getPhone()==phone){
+        if((*it)->getPhone()==phone){
             studs.erase(it);
             sortAll();
             return true;
@@ -138,23 +132,10 @@ bool classes::delete_via_Phone(const string& phone) {
     return false;
 }
 
-bool classes::change_via_ID(int id,const student& newStudent) {
-    vector<student>::iterator it;
+bool classes::change_via_ID(int id,student * newStudent) {
+    vector<student *>::iterator it;
     for(it=studs.begin();it!=studs.end();it++){
-        if(it->getId()==id){
-            studs.erase(it);
-            studs.insert(it, newStudent);
-            sortAll();
-            return true;
-        }
-    }
-    return false;
-}
-
-bool classes::change_via_Name(const string& studentName,const student& newStudent) {
-    vector<student>::iterator it;
-    for(it=studs.begin();it!=studs.end();it++){
-        if(it->getName()==name){
+        if((*it)->getId()==id){
             studs.erase(it);
             studs.insert(it, newStudent);
             sortAll();
@@ -164,10 +145,10 @@ bool classes::change_via_Name(const string& studentName,const student& newStuden
     return false;
 }
 
-bool classes::change_via_StudentID(const string& studentID,const student& newStudent) {
-    vector<student>::iterator it;
+bool classes::change_via_Name(const string& studentName,student * newStudent) {
+    vector<student *>::iterator it;
     for(it=studs.begin();it!=studs.end();it++){
-        if(it->getStudentId()==studentID){
+        if((*it)->getName()==name){
             studs.erase(it);
             studs.insert(it, newStudent);
             sortAll();
@@ -177,10 +158,10 @@ bool classes::change_via_StudentID(const string& studentID,const student& newStu
     return false;
 }
 
-bool classes::change_via_Result(double result,const student& newStudent) {
-    vector<student>::iterator it;
+bool classes::change_via_StudentID(const string& studentID,student * newStudent) {
+    vector<student *>::iterator it;
     for(it=studs.begin();it!=studs.end();it++){
-        if(it->getResult()==result){
+        if((*it)->getStudentId()==studentID){
             studs.erase(it);
             studs.insert(it, newStudent);
             sortAll();
@@ -190,10 +171,10 @@ bool classes::change_via_Result(double result,const student& newStudent) {
     return false;
 }
 
-bool classes::change_via_Phone(const string& phone,const student& newStudent) {
-    vector<student>::iterator it;
+bool classes::change_via_Result(double result,student * newStudent) {
+    vector<student *>::iterator it;
     for(it=studs.begin();it!=studs.end();it++){
-        if(it->getPhone()==phone){
+        if((*it)->getResult()==result){
             studs.erase(it);
             studs.insert(it, newStudent);
             sortAll();
@@ -203,11 +184,27 @@ bool classes::change_via_Phone(const string& phone,const student& newStudent) {
     return false;
 }
 
-//é‡æ–°æ’åºæ‰€æœ‰id
+bool classes::change_via_Phone(const string& phone,student * newStudent) {
+    vector<student *>::iterator it;
+    for(it=studs.begin();it!=studs.end();it++){
+        if((*it)->getPhone()==phone){
+            studs.erase(it);
+            studs.insert(it, newStudent);
+            sortAll();
+            return true;
+        }
+    }
+    return false;
+}
+
+//ÖØĞÂÅÅĞòËùÓĞid
 void classes::sortAll() {
-    vector<student>::iterator it;
+    vector<student*>::iterator it;
     int id=1;
     for(it=studs.begin();it!=studs.end();it++,id++){
-        it->setId(id);
+        (*it)->setId(id);
     }
 }
+
+
+

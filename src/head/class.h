@@ -1,5 +1,5 @@
 //
-// Created by å´”æ˜Œèµ« on 2021/6/21.
+// Created by ´Ş²ıºÕ on 2021/6/21.
 //
 
 #ifndef STUDENTMANAGER_CLASS_H
@@ -10,34 +10,34 @@
 #endif //STUDENTMANAGER_CLASS_H
 
 /*
- * è¿™ä¸ªæ˜¯å¯¹ç­çº§ä¿¡æ¯è¿›è¡ŒæŠ½è±¡å°è£…
- * ç­çº§ä¼šåŒ…æ‹¬å­¦ç”Ÿ:
+ * Õâ¸öÊÇ¶Ô°à¼¶ĞÅÏ¢½øĞĞ³éÏó·â×°
+ * °à¼¶»á°üÀ¨Ñ§Éú:
  * student->class
  * */
 
 class classes{
 private:
-    //ç­çº§åŸºæœ¬ä¿¡æ¯
-    string name;//ç­çº§å
-    string numOfStu;//å­¦ç”Ÿæ•°é‡
-    string major;//æ‰€å±é™¢ç³»åç§°
-    //å­˜å‚¨å­¦ç”Ÿä¿¡æ¯
+    //°à¼¶»ù±¾ĞÅÏ¢
+    string name;//°à¼¶Ãû
+    string numOfStu;//Ñ§ÉúÊıÁ¿
+    string major;//ËùÊôÔºÏµÃû³Æ
+    //´æ´¢Ñ§ÉúĞÅÏ¢
     /*
-     * å¦‚æœå†æ‰‹åŠ¨å†™ä¸€ä¸ªé“¾è¡¨å¤ªè€—æ—¶éº»çƒ¦äº†ï¼Œæˆ‘ç´¢æ€§å°±ç”¨c++ä¸­çš„stlå®¹å™¨æ›¿ä»£äº†
-     * ä½ ä»¬ç­çš„acmçš„äººåº”è¯¥éƒ½ä¼šç”¨ æˆ‘è§‰å¾—åº”è¯¥æ²¡å•¥é—®é¢˜
-     * å¦‚æœä½ è§‰å¾—ä¸è¡Œçš„è¯ åœ¨è”ç³»æˆ‘ æˆ‘æ‰‹åŠ¨ç»™ä½ å®ç°ä¸€ä¸ªvector
+     * Èç¹ûÔÙÊÖ¶¯Ğ´Ò»¸öÁ´±íÌ«ºÄÊ±Âé·³ÁË£¬ÎÒË÷ĞÔ¾ÍÓÃc++ÖĞµÄstlÈİÆ÷Ìæ´úÁË
+     * ÄãÃÇ°àµÄacmµÄÈËÓ¦¸Ã¶¼»áÓÃ ÎÒ¾õµÃÓ¦¸ÃÃ»É¶ÎÊÌâ
+     * Èç¹ûÄã¾õµÃ²»ĞĞµÄ»° ÔÚÁªÏµÎÒ ÎÒÊÖ¶¯¸øÄãÊµÏÖÒ»¸övector
      * */
-    vector<student> studs;
+    vector<student*> studs;
 
 public:
-    //å…¨ä¿¡æ¯æ„é€ å‡½æ•°(é™¤äº†å­¦ç”Ÿä¿¡æ¯ å¯ä»¥ç†è§£ä¸ºè®¾ç½®ç­çº§çš„åŸºæœ¬ä¿¡æ¯)
+    //È«ĞÅÏ¢¹¹Ôìº¯Êı(³ıÁËÑ§ÉúĞÅÏ¢ ¿ÉÒÔÀí½âÎªÉèÖÃ°à¼¶µÄ»ù±¾ĞÅÏ¢)
     classes(const string &name, const string &numOfStu, const string &major) : name(name), numOfStu(numOfStu),
                                                                                major(major) {};
-    //æ— å‚æ„é€ å‡½æ•°
+    //ÎŞ²Î¹¹Ôìº¯Êı
     classes() {};
 
 
-    //get&setæ¥å£ åªè®¾ç½®å‰ä¸‰ä¸ªåŸºæœ¬ä¿¡æ¯ å¹¶ä¸å¯¹å­¦ç”Ÿä¿¡æ¯vectorè¿›è¡Œå¼€æ”¾
+    //get&set½Ó¿Ú Ö»ÉèÖÃÇ°Èı¸ö»ù±¾ĞÅÏ¢ ²¢²»¶ÔÑ§ÉúĞÅÏ¢vector½øĞĞ¿ª·Å
     const string &getName() const {
         return name;
     }
@@ -61,29 +61,34 @@ public:
     void setMajor(const string &major) {
         classes::major = major;
     }
+    vector<student*> getStuds(){
+        return this->studs;
+    }
 
-    //å­¦ç”Ÿä¿¡æ¯CUDR
-    void add_Student(const student& temp);//å¢åŠ 
-    void inset_Student(const student& temp,int site);//æ’å…¥
-    //æŸ¥æ‰¾å­¦ç”Ÿä¿¡æ¯
-    student search_via_ID(int id);//é€šè¿‡idæŸ¥æ‰¾
-    student search_via_Name(const string& studentName);//é€šè¿‡å§“åæŸ¥æ‰¾
-    student search_via_StudentID(const string& studentID);//é€šè¿‡å­¦å·æŸ¥æ‰¾
-    student search_via_Result(double result);//é€šè¿‡æˆç»©æŸ¥æ‰¾
-    student search_via_Phone(const string& phone);//é€šè¿‡ç”µè¯æŸ¥æ‰¾
-    //åˆ é™¤å­¦ç”Ÿä¿¡æ¯
-    bool delete_via_ID(int id);//é€šè¿‡idåˆ é™¤
-    bool delete_via_Name(const string& studentName);//é€šè¿‡å§“ååˆ é™¤
-    bool delete_via_StudentID(const string& studentID);//é€šè¿‡å­¦å·åˆ é™¤
-    bool delete_via_Result(double result);//é€šè¿‡æˆç»©åˆ é™¤
-    bool delete_via_Phone(const string& phone);//é€šè¿‡ç”µè¯åˆ é™¤
-    //æ›´æ”¹å­¦ç”Ÿä¿¡æ¯
-    bool change_via_ID(int id,const student& newStudent);//é€šè¿‡idåˆ é™¤
-    bool change_via_Name(const string& studentName,const student& newStudent);//é€šè¿‡å§“ååˆ é™¤
-    bool change_via_StudentID(const string& studentID,const student& newStudent);//é€šè¿‡å­¦å·åˆ é™¤
-    bool change_via_Result(double result,const student& newStudent);//é€šè¿‡æˆç»©åˆ é™¤
-    bool change_via_Phone(const string& phone,const student& newStudent);//é€šè¿‡ç”µè¯åˆ é™¤
 
-    //å†…ç½®å·¥å…·æ–¹æ³•(util)
-    void sortAll();//é‡æ–°æ’åºæ‰€æœ‰id
+
+    //Ñ§ÉúĞÅÏ¢CUDR
+    void add_Student(student * temp);//Ôö¼Ó
+    void inset_Student(student * temp,int site);//²åÈë
+    //²éÕÒÑ§ÉúĞÅÏ¢
+    student* search_via_ID(int id);//Í¨¹ıid²éÕÒ
+    student* search_via_Name(const string& studentName);//Í¨¹ıĞÕÃû²éÕÒ
+    student* search_via_StudentID(const string& studentID);//Í¨¹ıÑ§ºÅ²éÕÒ
+    student* search_via_Result(double result);//Í¨¹ı³É¼¨²éÕÒ
+    student* search_via_Phone(const string& phone);//Í¨¹ıµç»°²éÕÒ
+    //É¾³ıÑ§ÉúĞÅÏ¢
+    bool delete_via_ID(int id);//Í¨¹ıidÉ¾³ı
+    bool delete_via_Name(const string& studentName);//Í¨¹ıĞÕÃûÉ¾³ı
+    bool delete_via_StudentID(const string& studentID);//Í¨¹ıÑ§ºÅÉ¾³ı
+    bool delete_via_Result(double result);//Í¨¹ı³É¼¨É¾³ı
+    bool delete_via_Phone(const string& phone);//Í¨¹ıµç»°É¾³ı
+    //¸ü¸ÄÑ§ÉúĞÅÏ¢
+    bool change_via_ID(int id,student * newStudent);//Í¨¹ıid¸ü¸Ä
+    bool change_via_Name(const string& studentName,student * newStudent);//Í¨¹ıĞÕÃû¸ü¸Ä
+    bool change_via_StudentID(const string& studentID,student * newStudent);//Í¨¹ıÑ§ºÅ¸ü¸Ä
+    bool change_via_Result(double result,student * newStudent);//Í¨¹ı³É¼¨¸ü¸Ä
+    bool change_via_Phone(const string& phone,student * newStudent);//Í¨¹ıµç»°¸ü¸Ä
+
+    //ÄÚÖÃ¹¤¾ß·½·¨(util)
+    void sortAll();//ÖØĞÂÅÅĞòËùÓĞid
 };

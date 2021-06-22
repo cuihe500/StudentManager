@@ -4,10 +4,10 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "D:/c++/studentManager/main.cpp" "D:/c++/studentManager/cmake-build-debug/CMakeFiles/studentManager.dir/main.cpp.obj"
-  "D:/c++/studentManager/src/File.cpp" "D:/c++/studentManager/cmake-build-debug/CMakeFiles/studentManager.dir/src/File.cpp.obj"
-  "D:/c++/studentManager/src/class.cpp" "D:/c++/studentManager/cmake-build-debug/CMakeFiles/studentManager.dir/src/class.cpp.obj"
-  "D:/c++/studentManager/src/util.cpp" "D:/c++/studentManager/cmake-build-debug/CMakeFiles/studentManager.dir/src/util.cpp.obj"
+  "C:/Users/Watcher-7/Downloads/Compressed/StudentManager-main/main.cpp" "C:/Users/Watcher-7/Downloads/Compressed/StudentManager-main/cmake-build-debug/CMakeFiles/studentManager.dir/main.cpp.obj"
+  "C:/Users/Watcher-7/Downloads/Compressed/StudentManager-main/src/File.cpp" "C:/Users/Watcher-7/Downloads/Compressed/StudentManager-main/cmake-build-debug/CMakeFiles/studentManager.dir/src/File.cpp.obj"
+  "C:/Users/Watcher-7/Downloads/Compressed/StudentManager-main/src/class.cpp" "C:/Users/Watcher-7/Downloads/Compressed/StudentManager-main/cmake-build-debug/CMakeFiles/studentManager.dir/src/class.cpp.obj"
+  "C:/Users/Watcher-7/Downloads/Compressed/StudentManager-main/src/util.cpp" "C:/Users/Watcher-7/Downloads/Compressed/StudentManager-main/cmake-build-debug/CMakeFiles/studentManager.dir/src/util.cpp.obj"
   )
 set(CMAKE_CXX_COMPILER_ID "MSVC")
 

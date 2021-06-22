@@ -1,5 +1,5 @@
 //
-// Created by å´”æ˜Œèµ« on 2021/6/21.
+// Created by ´Þ²ýºÕ on 2021/6/21.
 //
 
 #include "head/File.h"
@@ -46,24 +46,45 @@ vector<string> File::getAllFiles() {
 }
 
 bool File::writeStudent(classes classes, student stud) {
+    string paths=path+classes.getMajor()+" "+classes.getName();
+    CreateDirectory(paths.c_str(), NULL);
     ofstream ofstream1;
-    ofstream1.open(path+classes.getName()+stud.getName());
+    ofstream1.open(paths+"\\"+classes.getName()+" "+stud.getName()+".txt");
     if(!ofstream1.is_open()){
         return false;
     }
     ofstream1 <<stud.getId()<<"."
-    <<"å§“å:"<<stud.getName()<<"    "
-    <<"æ€§åˆ«:"<<stud.getSex()<<"   "
-    <<"å­¦å·:"<<stud.getStudentId()<<" "
-    <<"æˆç»©:"<<stud.getResult()<<"    "
-    <<"ç”µè¯å·:"<<stud.getPhone();
+    <<"ÐÕÃû:"<<stud.getName()<<"    "
+    <<"ÐÔ±ð:"<<stud.getSex()<<"    "
+    <<"Ñ§ºÅ:"<<stud.getStudentId()<<"    "
+    <<"³É¼¨:"<<stud.getResult()<<"    "
+    <<"µç»°:"<<stud.getPhone();
     ofstream1.close();
     return true;
 
 }
 
 bool File::writeAllStudents(classes classes) {
-    return false;
+    vector<student *>::iterator it;
+    vector<student *> temp = classes.getStuds();
+    string paths=path+classes.getMajor()+" "+classes.getName();
+    CreateDirectory(paths.c_str(), NULL);
+    for(it=temp.begin();it!=temp.end();it++) {
+        ofstream ofstream1;
+        ofstream1.open(paths+"\\"+ classes.getName() + " " + (*it)->getName() + ".txt");
+        if (!ofstream1.is_open()) {
+            return false;
+        }
+        ofstream1 << (*it)->getId() << "."
+                  << "ÐÕÃû:" << (*it)->getName() << "    "
+                  << "ÐÔ±ð:" << (*it)->getSex() << "    "
+                  << "Ñ§ºÅ:" << (*it)->getStudentId() << "    "
+                  << "³É¼¨:" << (*it)->getResult() << "    "
+                  << "µç»°:" << (*it)->getPhone();
+        ofstream1.close();
+    }
+    return true;
+
 }
 
 student File::readStudent(classes classes, string studentName) {
