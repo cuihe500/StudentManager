@@ -12,64 +12,69 @@ void classes::add_Student(student *temp) {
     sortAll();
 }
 
+void classes::add_Student_No_Sort(student *temp) {
+    studs.push_back(temp);
+}
 void classes::inset_Student(student *temp, int site) {
     vector<student *>::iterator it;
     studs.insert((it+=site),temp);
     sortAll();
 }
 
-student * classes::search_via_ID(int id) {
+student classes::search_via_ID(int id) {
+    student temp;
     vector<student *>::iterator it;
+    temp.setId(0);
     for(it=studs.begin();it!=studs.end();it++){
         if((*it)->getId()==id){
-            return *it;
+            return *(*it);
         }
     }
-    return nullptr;
+    return temp;
 }
 
-student * classes::search_via_Name(const string& studentName) {
+vector<student *> classes::search_via_Name(const string& studentName) {
     vector<student *>::iterator it;
+    vector<student *>temp;
     for(it=studs.begin();it!=studs.end();it++){
         if((*it)->getName()==studentName){
-            return *it;
+            temp.push_back(*it);
         }
     }
-    return nullptr;
+    return temp;
 }
 
-student * classes::search_via_StudentID(const string& studentID) {
+vector<student *> classes::search_via_StudentID(const string& studentID) {
     vector<student *>::iterator it;
-    student temp;
-    temp.setName("NULL!");//标识符 如果姓名为NULL!则说明未查找到
+    vector<student *>temp;
     for(it=studs.begin();it!=studs.end();it++){
         if((*it)->getStudentId()==studentID){
-            return *it;
+            temp.push_back(*it);
         }
     }
-    return nullptr;
+    return temp;
 }
 
-student * classes::search_via_Result(double result) {
+vector<student *> classes::search_via_Result(double result) {
     vector<student *>::iterator it;
+    vector<student *>temp;
     for(it=studs.begin();it!=studs.end();it++){
         if((*it)->getResult()==result){
-            return *it;
+            temp.push_back(*it);
         }
     }
-    return nullptr;
+    return temp;
 }
 
-student * classes::search_via_Phone(const string& phone) {
+vector<student *> classes::search_via_Phone(const string& phone) {
     vector<student *>::iterator it;
-    student temp;
-    temp.setName("NULL!");//标识符 如果姓名为NULL!则说明未查找到
+    vector<student *>temp;
     for(it=studs.begin();it!=studs.end();it++){
         if((*it)->getPhone()==phone){
-            return *it;
+            temp.push_back(*it);
         }
     }
-    return nullptr;
+    return temp;
 }
 
 bool classes::delete_via_ID(int id) {
@@ -205,6 +210,13 @@ void classes::sortAll() {
         (*it)->setId(id);
     }
 }
+
+unsigned int classes::getTotalStudent() {
+    return studs.size();
+}
+
+
+
 
 
 

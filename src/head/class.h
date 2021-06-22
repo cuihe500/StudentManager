@@ -19,7 +19,6 @@ class classes{
 private:
     //班级基本信息
     string name;//班级名
-    string numOfStu;//学生数量
     string major;//所属院系名称
     //存储学生信息
     /*
@@ -31,8 +30,7 @@ private:
 
 public:
     //全信息构造函数(除了学生信息 可以理解为设置班级的基本信息)
-    classes(const string &name, const string &numOfStu, const string &major) : name(name), numOfStu(numOfStu),
-                                                                               major(major) {};
+    classes(const string &name, const string &major) : name(name),major(major) {};
     //无参构造函数
     classes() {};
 
@@ -46,14 +44,6 @@ public:
         classes::name = name;
     }
 
-    const string &getNumOfStu() const {
-        return numOfStu;
-    }
-
-    void setNumOfStu(const string &numOfStu) {
-        classes::numOfStu = numOfStu;
-    }
-
     const string &getMajor() const {
         return major;
     }
@@ -65,17 +55,20 @@ public:
         return this->studs;
     }
 
-
+    void setStuds(const vector<student *> &studs) {
+        classes::studs = studs;
+    }
 
     //学生信息CUDR
     void add_Student(student * temp);//增加
+    void add_Student_No_Sort(student * temp);//增加(不重排序)
     void inset_Student(student * temp,int site);//插入
     //查找学生信息
-    student* search_via_ID(int id);//通过id查找
-    student* search_via_Name(const string& studentName);//通过姓名查找
-    student* search_via_StudentID(const string& studentID);//通过学号查找
-    student* search_via_Result(double result);//通过成绩查找
-    student* search_via_Phone(const string& phone);//通过电话查找
+    student search_via_ID(int id);//通过id查找(只有一个结果 所以用单指针)
+    vector<student *> search_via_Name(const string& studentName);//通过姓名查找
+    vector<student *> search_via_StudentID(const string& studentID);//通过学号查找
+    vector<student *> search_via_Result(double result);//通过成绩查找
+    vector<student *> search_via_Phone(const string& phone);//通过电话查找
     //删除学生信息
     bool delete_via_ID(int id);//通过id删除
     bool delete_via_Name(const string& studentName);//通过姓名删除
@@ -91,4 +84,5 @@ public:
 
     //内置工具方法(util)
     void sortAll();//重新排序所有id
+    unsigned int getTotalStudent();
 };
