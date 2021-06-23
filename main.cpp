@@ -4,15 +4,17 @@
 #include "src/head/window.h"
 #include "src/head/util.h"
 
-vector<classes*> init(File files);
+//主调函数
+vector<classes*> _15_xkn_1_init(File files);//初始化函数(读取信息)
+
 int main() {
     string path=getcwd(nullptr, 0);
-    File file(path+"\\");
-    vector<classes*> allClasses=init(file);;
-    window win(allClasses,file);
+    File _15_xkn_2_file(path+"\\");
+    vector<classes*> _15_xkn_3_allClasses=_15_xkn_1_init(_15_xkn_2_file);;
+    window win(_15_xkn_3_allClasses,_15_xkn_2_file);
     win._interface();
 }
-vector<classes*> init(File files){
+vector<classes*> _15_xkn_1_init(File files){
     vector<classes *> classesd;
     vector<string>Diretorys=files.getAllDiretorys();
     vector<string>::iterator it;

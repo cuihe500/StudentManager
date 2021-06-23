@@ -20,6 +20,7 @@ window::window(vector<classes *> &classd, File &filed) : classd(classd), filed(f
         cout << "请输入您的选择:";
         int choice;
         cin >> choice;
+        cin.get();
         switch (choice) {
             case __ONE__:
                 _addNewStudent();
@@ -106,6 +107,7 @@ void window::_addNewStudent() {
         cout << "请输入您要查看的班级序号(0.退出):";
         int choice;
         cin >> choice;
+        cin.get();
         if (choice<=SumOfClasses && choice>0){
             for(int i =1;i<=(*classd[choice-1]).getTotalStudent();i++)
                 cout
@@ -139,11 +141,13 @@ void window::_addNewStudent() {
         cout << "请输入您的查找方式:" << endl;
         int choice;
         cin >> choice;
+        cin.get();
         vector<classes *>::iterator it;
         if (choice == 1) {
             cout << "请输入ID:" << endl;
             int ID;
             cin >> ID;
+            cin.get();
             if (ID >= 0) {
                 for (it = classd.begin(); it != classd.end(); it++) {
                     if ((*it)->search_via_ID(ID).getId() != 0) {
@@ -211,6 +215,7 @@ void window::_addNewStudent() {
             cout << "请输入成绩:" << endl;
             double result;
             cin >> result;
+            cin.get();
             if (result!=NULL) {
                 for (it = classd.begin(); it != classd.end(); it++) {
                     if (!(*it)->search_via_Result(result).empty()) {
@@ -276,12 +281,14 @@ void window::_addNewStudent() {
         cout << "请输入您的查找方式:" << endl;
         int choice;
         cin >> choice;
+        cin.get();
         vector<classes *>::iterator it;
         vector<classes *>deleteList;
         if (choice == 1) {
             cout << "请输入ID:" << endl;
             int ID;
             cin >> ID;
+            cin.get();
             if (ID >= 0) {
                 for (it = classd.begin(); it != classd.end(); it++) {
                     if ((*it)->search_via_ID(ID).getId() != 0) {
@@ -301,23 +308,28 @@ void window::_addNewStudent() {
                 cout << "输入有误！请检查." << endl;
             }
             unsigned int SumOfStudents=0;
+            vector<student *>ptrOfStudent;
+            map<int,classes*>countMap;
+            int count =1;
             if(!deleteList.empty()) {
                 for (it = deleteList.begin(); it != deleteList.end(); it++){
                     SumOfStudents+=(*it)->getTotalStudent();
                 }
                 cout << "共查询到" << SumOfStudents << "个符合条件的学生信息:" << endl;
-                int count =1;
                 for (it = deleteList.begin(); it != deleteList.end(); it++) {
                     cout << "---------" << (*it)->getMajor() << "  " << (*it)->getName() << "---------" << endl;
-                    for (int i = 0; i < (*it)->getTotalStudent(); i++,count++)
-                        cout<<count<<"."
-                                << "ID:" << (*it)->getStuds()[i]->getId() << "---"
-                                << "姓名:" << (*it)->getStuds()[i]->getName() << "---"
-                                << "性别:" << (*it)->getStuds()[i]->getSex() << "---"
-                                << "学号:" << (*it)->getStuds()[i]->getStudentId() << "---"
-                                << "成绩:" << (*it)->getStuds()[i]->getResult() << "---"
-                                << "电话:" << (*it)->getStuds()[i]->getPhone()
-                                << endl;
+                    for (int i = 0; i < (*it)->getTotalStudent(); i++,count++) {
+                        cout << count << "."
+                             << "ID:" << (*it)->getStuds()[i]->getId() << "---"
+                             << "姓名:" << (*it)->getStuds()[i]->getName() << "---"
+                             << "性别:" << (*it)->getStuds()[i]->getSex() << "---"
+                             << "学号:" << (*it)->getStuds()[i]->getStudentId() << "---"
+                             << "成绩:" << (*it)->getStuds()[i]->getResult() << "---"
+                             << "电话:" << (*it)->getStuds()[i]->getPhone()
+                             << endl;
+                        ptrOfStudent.push_back((*it)->getStuds()[i]);
+                        countMap[count-1]=*it;
+                    }
                 }
             }
             cout << "请输入您要删除的学生序号(逗号分隔可删除多个,如1,2,5,6)"<<endl;
@@ -326,12 +338,20 @@ void window::_addNewStudent() {
             if(!choiceOfStudent.empty()){
                 vector<string>temp;
                 util::split(choiceOfStudent,temp,",");
-                student * prts[temp.size()];
                 for(int i =0;i<temp.size();i++){
-                    temp.si
+                    for(it=classd.begin();it!=classd.end();it++){
+                        if((*it)->getName()==countMap[atoi(temp[i].c_str())-1]->getName()
+                        &&
+                        (*it)->getMajor()==countMap[atoi(temp[i].c_str())-1]->getMajor()){
+                            (*it)->delete_via_ID(ptrOfStudent[atoi(temp[i].c_str())-1]->getId());
+                            filed.deleteAnStudent(*(*it),*ptrOfStudent[atoi(temp[i].c_str())-1]);
+                        }
+                    }
+//                    countMap[atoi(temp[i].c_str())]->delete_via_ID(ptrOfStudent[atoi(temp[i].c_str())]->getId());
+//                    filed.deleteAnStudent(*countMap[atoi(temp[i].c_str())],*ptrOfStudent[atoi(temp[i].c_str())]);
                 }
-                for (it = deleteList.begin(); it != deleteList.end(); it++) {
-                };
+            }else if (atoi(choiceOfStudent.c_str())==0){
+                return;
             }else{
                 cout<<"输入有误,请重新输入!";
             }
@@ -360,6 +380,8 @@ void window::_addNewStudent() {
                 cout << "输入有误！请检查." << endl;
             }
             unsigned int SumOfStudents=0;
+            vector<student *>ptrOfStudent;
+            map<int,classes*>countMap;
             if(!deleteList.empty()) {
                 for (it = deleteList.begin(); it != deleteList.end(); it++){
                     SumOfStudents+=(*it)->getTotalStudent();
@@ -368,15 +390,18 @@ void window::_addNewStudent() {
                 int count =1;
                 for (it = deleteList.begin(); it != deleteList.end(); it++) {
                     cout << "---------" << (*it)->getMajor() << "  " << (*it)->getName() << "---------" << endl;
-                    for (int i = 0; i < (*it)->getTotalStudent(); i++,count++)
-                        cout<<count<<"."
-                            << "ID:" << (*it)->getStuds()[i]->getId() << "---"
-                            << "姓名:" << (*it)->getStuds()[i]->getName() << "---"
-                            << "性别:" << (*it)->getStuds()[i]->getSex() << "---"
-                            << "学号:" << (*it)->getStuds()[i]->getStudentId() << "---"
-                            << "成绩:" << (*it)->getStuds()[i]->getResult() << "---"
-                            << "电话:" << (*it)->getStuds()[i]->getPhone()
-                            << endl;
+                    for (int i = 0; i < (*it)->getTotalStudent(); i++,count++) {
+                        cout << count << "."
+                             << "ID:" << (*it)->getStuds()[i]->getId() << "---"
+                             << "姓名:" << (*it)->getStuds()[i]->getName() << "---"
+                             << "性别:" << (*it)->getStuds()[i]->getSex() << "---"
+                             << "学号:" << (*it)->getStuds()[i]->getStudentId() << "---"
+                             << "成绩:" << (*it)->getStuds()[i]->getResult() << "---"
+                             << "电话:" << (*it)->getStuds()[i]->getPhone()
+                             << endl;
+                        ptrOfStudent.push_back((*it)->getStuds()[i]);
+                        countMap[count - 1] = *it;
+                    }
                 }
             }
             cout << "请输入您要删除的学生序号(逗号分隔可删除多个,如1,2,5,6)"<<endl;
@@ -386,8 +411,19 @@ void window::_addNewStudent() {
                 vector<string>temp;
                 util::split(choiceOfStudent,temp,",");
                 for(int i =0;i<temp.size();i++){
-                    //删除学生
+                    for(it=classd.begin();it!=classd.end();it++){
+                        if((*it)->getName()==countMap[atoi(temp[i].c_str())-1]->getName()
+                           &&
+                           (*it)->getMajor()==countMap[atoi(temp[i].c_str())-1]->getMajor()){
+                            (*it)->delete_via_ID(ptrOfStudent[atoi(temp[i].c_str())-1]->getId());
+                            filed.deleteAnStudent(*(*it),*ptrOfStudent[atoi(temp[i].c_str())-1]);
+                        }
+                    }
+//                    countMap[atoi(temp[i].c_str())]->delete_via_ID(ptrOfStudent[atoi(temp[i].c_str())]->getId());
+//                    filed.deleteAnStudent(*countMap[atoi(temp[i].c_str())],*ptrOfStudent[atoi(temp[i].c_str())]);
                 }
+            }else if (atoi(choiceOfStudent.c_str())==0){
+                return;
             }else{
                 cout<<"输入有误,请重新输入!";
             }
@@ -416,6 +452,8 @@ void window::_addNewStudent() {
                 cout << "输入有误！请检查." << endl;
             }
             unsigned int SumOfStudents=0;
+            vector<student *>ptrOfStudent;
+            map<int,classes*>countMap;
             if(!deleteList.empty()) {
                 for (it = deleteList.begin(); it != deleteList.end(); it++){
                     SumOfStudents+=(*it)->getTotalStudent();
@@ -424,15 +462,18 @@ void window::_addNewStudent() {
                 int count =1;
                 for (it = deleteList.begin(); it != deleteList.end(); it++) {
                     cout << "---------" << (*it)->getMajor() << "  " << (*it)->getName() << "---------" << endl;
-                    for (int i = 0; i < (*it)->getTotalStudent(); i++,count++)
-                        cout<<count<<"."
-                            << "ID:" << (*it)->getStuds()[i]->getId() << "---"
-                            << "姓名:" << (*it)->getStuds()[i]->getName() << "---"
-                            << "性别:" << (*it)->getStuds()[i]->getSex() << "---"
-                            << "学号:" << (*it)->getStuds()[i]->getStudentId() << "---"
-                            << "成绩:" << (*it)->getStuds()[i]->getResult() << "---"
-                            << "电话:" << (*it)->getStuds()[i]->getPhone()
-                            << endl;
+                    for (int i = 0; i < (*it)->getTotalStudent(); i++,count++) {
+                        cout << count << "."
+                             << "ID:" << (*it)->getStuds()[i]->getId() << "---"
+                             << "姓名:" << (*it)->getStuds()[i]->getName() << "---"
+                             << "性别:" << (*it)->getStuds()[i]->getSex() << "---"
+                             << "学号:" << (*it)->getStuds()[i]->getStudentId() << "---"
+                             << "成绩:" << (*it)->getStuds()[i]->getResult() << "---"
+                             << "电话:" << (*it)->getStuds()[i]->getPhone()
+                             << endl;
+                        ptrOfStudent.push_back((*it)->getStuds()[i]);
+                        countMap[count - 1] = *it;
+                    }
                 }
             }
             cout << "请输入您要删除的学生序号(逗号分隔可删除多个,如1,2,5,6)"<<endl;
@@ -442,8 +483,19 @@ void window::_addNewStudent() {
                 vector<string>temp;
                 util::split(choiceOfStudent,temp,",");
                 for(int i =0;i<temp.size();i++){
-                    //删除学生
+                    for(it=classd.begin();it!=classd.end();it++){
+                        if((*it)->getName()==countMap[atoi(temp[i].c_str())-1]->getName()
+                           &&
+                           (*it)->getMajor()==countMap[atoi(temp[i].c_str())-1]->getMajor()){
+                            (*it)->delete_via_ID(ptrOfStudent[atoi(temp[i].c_str())-1]->getId());
+                            filed.deleteAnStudent(*(*it),*ptrOfStudent[atoi(temp[i].c_str())-1]);
+                        }
+                    }
+//                    countMap[atoi(temp[i].c_str())]->delete_via_ID(ptrOfStudent[atoi(temp[i].c_str())]->getId());
+//                    filed.deleteAnStudent(*countMap[atoi(temp[i].c_str())],*ptrOfStudent[atoi(temp[i].c_str())]);
                 }
+            }else if (atoi(choiceOfStudent.c_str())==0){
+                return;
             }else{
                 cout<<"输入有误,请重新输入!";
             }
@@ -451,6 +503,7 @@ void window::_addNewStudent() {
             cout << "请输入成绩:" << endl;
             double result;
             cin >> result;
+            cin.get();
             if (result!=0) {
                 for (it = classd.begin(); it != classd.end(); it++) {
                     if (!(*it)->search_via_Result(result).empty()) {
@@ -472,6 +525,8 @@ void window::_addNewStudent() {
                 cout << "输入有误！请检查." << endl;
             }
             unsigned int SumOfStudents=0;
+            vector<student *>ptrOfStudent;
+            map<int,classes*>countMap;
             if(!deleteList.empty()) {
                 for (it = deleteList.begin(); it != deleteList.end(); it++){
                     SumOfStudents+=(*it)->getTotalStudent();
@@ -480,15 +535,18 @@ void window::_addNewStudent() {
                 int count =1;
                 for (it = deleteList.begin(); it != deleteList.end(); it++) {
                     cout << "---------" << (*it)->getMajor() << "  " << (*it)->getName() << "---------" << endl;
-                    for (int i = 0; i < (*it)->getTotalStudent(); i++,count++)
-                        cout<<count<<"."
-                            << "ID:" << (*it)->getStuds()[i]->getId() << "---"
-                            << "姓名:" << (*it)->getStuds()[i]->getName() << "---"
-                            << "性别:" << (*it)->getStuds()[i]->getSex() << "---"
-                            << "学号:" << (*it)->getStuds()[i]->getStudentId() << "---"
-                            << "成绩:" << (*it)->getStuds()[i]->getResult() << "---"
-                            << "电话:" << (*it)->getStuds()[i]->getPhone()
-                            << endl;
+                    for (int i = 0; i < (*it)->getTotalStudent(); i++,count++) {
+                        cout << count << "."
+                             << "ID:" << (*it)->getStuds()[i]->getId() << "---"
+                             << "姓名:" << (*it)->getStuds()[i]->getName() << "---"
+                             << "性别:" << (*it)->getStuds()[i]->getSex() << "---"
+                             << "学号:" << (*it)->getStuds()[i]->getStudentId() << "---"
+                             << "成绩:" << (*it)->getStuds()[i]->getResult() << "---"
+                             << "电话:" << (*it)->getStuds()[i]->getPhone()
+                             << endl;
+                        ptrOfStudent.push_back((*it)->getStuds()[i]);
+                        countMap[count - 1] = *it;
+                    }
                 }
             }
             cout << "请输入您要删除的学生序号(逗号分隔可删除多个,如1,2,5,6)"<<endl;
@@ -498,8 +556,19 @@ void window::_addNewStudent() {
                 vector<string>temp;
                 util::split(choiceOfStudent,temp,",");
                 for(int i =0;i<temp.size();i++){
-                    //删除学生
+                    for(it=classd.begin();it!=classd.end();it++){
+                        if((*it)->getName()==countMap[atoi(temp[i].c_str())-1]->getName()
+                           &&
+                           (*it)->getMajor()==countMap[atoi(temp[i].c_str())-1]->getMajor()){
+                            (*it)->delete_via_ID(ptrOfStudent[atoi(temp[i].c_str())-1]->getId());
+                            filed.deleteAnStudent(*(*it),*ptrOfStudent[atoi(temp[i].c_str())-1]);
+                        }
+                    }
+//                    countMap[atoi(temp[i].c_str())]->delete_via_ID(ptrOfStudent[atoi(temp[i].c_str())]->getId());
+//                    filed.deleteAnStudent(*countMap[atoi(temp[i].c_str())],*ptrOfStudent[atoi(temp[i].c_str())]);
                 }
+            }else if (atoi(choiceOfStudent.c_str())==0){
+                return;
             }else{
                 cout<<"输入有误,请重新输入!";
             }
@@ -528,6 +597,8 @@ void window::_addNewStudent() {
                 cout << "输入有误！请检查." << endl;
             }
             unsigned int SumOfStudents=0;
+            vector<student *>ptrOfStudent;
+            map<int,classes*>countMap;
             if(!deleteList.empty()) {
                 for (it = deleteList.begin(); it != deleteList.end(); it++){
                     SumOfStudents+=(*it)->getTotalStudent();
@@ -536,15 +607,18 @@ void window::_addNewStudent() {
                 int count =1;
                 for (it = deleteList.begin(); it != deleteList.end(); it++) {
                     cout << "---------" << (*it)->getMajor() << "  " << (*it)->getName() << "---------" << endl;
-                    for (int i = 0; i < (*it)->getTotalStudent(); i++,count++)
-                        cout<<count<<"."
-                            << "ID:" << (*it)->getStuds()[i]->getId() << "---"
-                            << "姓名:" << (*it)->getStuds()[i]->getName() << "---"
-                            << "性别:" << (*it)->getStuds()[i]->getSex() << "---"
-                            << "学号:" << (*it)->getStuds()[i]->getStudentId() << "---"
-                            << "成绩:" << (*it)->getStuds()[i]->getResult() << "---"
-                            << "电话:" << (*it)->getStuds()[i]->getPhone()
-                            << endl;
+                    for (int i = 0; i < (*it)->getTotalStudent(); i++, count++) {
+                        cout << count << "."
+                             << "ID:" << (*it)->getStuds()[i]->getId() << "---"
+                             << "姓名:" << (*it)->getStuds()[i]->getName() << "---"
+                             << "性别:" << (*it)->getStuds()[i]->getSex() << "---"
+                             << "学号:" << (*it)->getStuds()[i]->getStudentId() << "---"
+                             << "成绩:" << (*it)->getStuds()[i]->getResult() << "---"
+                             << "电话:" << (*it)->getStuds()[i]->getPhone()
+                             << endl;
+                        ptrOfStudent.push_back((*it)->getStuds()[i]);
+                        countMap[count - 1] = *it;
+                    }
                 }
             }
             cout << "请输入您要删除的学生序号(逗号分隔可删除多个,如1,2,5,6)"<<endl;
@@ -554,8 +628,21 @@ void window::_addNewStudent() {
                 vector<string>temp;
                 util::split(choiceOfStudent,temp,",");
                 for(int i =0;i<temp.size();i++){
-                    //删除学生
+                    for(int i =0;i<temp.size();i++){
+                        for(it=classd.begin();it!=classd.end();it++){
+                            if((*it)->getName()==countMap[atoi(temp[i].c_str())-1]->getName()
+                               &&
+                               (*it)->getMajor()==countMap[atoi(temp[i].c_str())-1]->getMajor()){
+                                (*it)->delete_via_ID(ptrOfStudent[atoi(temp[i].c_str())-1]->getId());
+                                filed.deleteAnStudent(*(*it),*ptrOfStudent[atoi(temp[i].c_str())-1]);
+                            }
+                        }
+//                    countMap[atoi(temp[i].c_str())]->delete_via_ID(ptrOfStudent[atoi(temp[i].c_str())]->getId());
+//                    filed.deleteAnStudent(*countMap[atoi(temp[i].c_str())],*ptrOfStudent[atoi(temp[i].c_str())]);
+                    }
                 }
+            }else if (atoi(choiceOfStudent.c_str())==0){
+                return;
             }else{
                 cout<<"输入有误,请重新输入!";
             }

@@ -1,11 +1,12 @@
 //
-// Created by 崔昌赫 on 2021/6/22.
+// Created by 徐恺泞 on 2021/6/22.
 //
 
 #ifndef STUDENTMANAGER_WINDOW_H
 #include<iostream>
 #include "File.h"
 #include <direct.h>
+#include <map>
 #define STUDENTMANAGER_WINDOW_H
 
 #define __ONE__ 1
@@ -18,23 +19,22 @@
 #define __EIGHT__ 8
 #define __NIGNT__ 9
 
+//界面绘制及功能实现类
 using namespace std;
 class window {
 private:
-    vector<classes*>& classd;
-    File& filed;
-    void _addNewStudent();
-    [[noreturn]] void _showStudents();
+    vector<classes*>& classd;//存储班级
+    File& filed;//文件操作
 
-    [[noreturn]] void _findAnStudent();
-
-    [[noreturn]] void _deleteAnStudent();
-    void _saveStudentInfo();
-    void _exportStudentInfo();
+    void _addNewStudent();//增加一个学生信息
+    [[noreturn]] void _showStudents();//显示学生信息
+    [[noreturn]] void _findAnStudent();//查找学生信息
+    [[noreturn]] void _deleteAnStudent();//删除一个学生信息
+    void _saveStudentInfo();//保存学生信息
+    void _exportStudentInfo();//导出学生信息
 public:
-    window(vector<classes *> &classd, File &filed);
-
-    [[noreturn]] void _interface();
+    window(vector<classes *> &classd, File &filed);//构造函数
+    [[noreturn]] void _interface();//主界面
 
 };
 

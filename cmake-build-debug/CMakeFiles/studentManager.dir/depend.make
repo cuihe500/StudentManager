@@ -6,6 +6,7 @@ CMakeFiles\studentManager.dir\main.cpp.obj: ..\src\head\File.h
 CMakeFiles\studentManager.dir\main.cpp.obj: ..\src\head\class.h
 CMakeFiles\studentManager.dir\main.cpp.obj: ..\src\head\student.h
 CMakeFiles\studentManager.dir\main.cpp.obj: ..\src\head\util.h
+CMakeFiles\studentManager.dir\main.cpp.obj: ..\src\head\window.h
 
 CMakeFiles\studentManager.dir\src\File.cpp.obj: ..\src\File.cpp
 CMakeFiles\studentManager.dir\src\File.cpp.obj: ..\src\head\File.h
@@ -19,4 +20,11 @@ CMakeFiles\studentManager.dir\src\class.cpp.obj: ..\src\head\student.h
 
 CMakeFiles\studentManager.dir\src\util.cpp.obj: ..\src\head\util.h
 CMakeFiles\studentManager.dir\src\util.cpp.obj: ..\src\util.cpp
+
+CMakeFiles\studentManager.dir\src\window.cpp.obj: ..\src\head\File.h
+CMakeFiles\studentManager.dir\src\window.cpp.obj: ..\src\head\class.h
+CMakeFiles\studentManager.dir\src\window.cpp.obj: ..\src\head\student.h
+CMakeFiles\studentManager.dir\src\window.cpp.obj: ..\src\head\util.h
+CMakeFiles\studentManager.dir\src\window.cpp.obj: ..\src\head\window.h
+CMakeFiles\studentManager.dir\src\window.cpp.obj: ..\src\window.cpp
 

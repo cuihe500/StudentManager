@@ -1,5 +1,5 @@
 //
-// Created by ´Þ²ýºÕ on 2021/6/21.
+// Created by ÐìâýÅ¢ on 2021/6/21.
 //
 
 #ifndef STUDENTMANAGER_UNIT_H
@@ -7,10 +7,11 @@
 #include<vector>
 #define STUDENTMANAGER_UNIT_H
 
-
+//¹¤¾ßÀà
 using namespace std;
 class util {
 public:
+    //·Ö¸î×Ö·û´®
     static void split(const string& s, vector<string>& tokens, const string& delimiters);
 };
 

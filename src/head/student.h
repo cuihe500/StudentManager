@@ -1,5 +1,5 @@
 //
-// Created by ´Þ²ýºÕ on 2021/6/21.
+// Created by ÐìâýÅ¢ on 2021/6/21.
 //
 
 #ifndef STUDENTMANAGER_STUDENT_H

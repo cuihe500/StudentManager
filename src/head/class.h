@@ -1,5 +1,5 @@
 //
-// Created by 崔昌赫 on 2021/6/21.
+// Created by 徐恺泞 on 2021/6/21.
 //
 
 #ifndef STUDENTMANAGER_CLASS_H
@@ -21,11 +21,8 @@ private:
     string name;//班级名
     string major;//所属院系名称
     //存储学生信息
-    /*
-     * 如果再手动写一个链表太耗时麻烦了，我索性就用c++中的stl容器替代了
-     * 你们班的acm的人应该都会用 我觉得应该没啥问题
-     * 如果你觉得不行的话 在联系我 我手动给你实现一个vector
-     * */
+
+    /*由于考虑到副本占用内存的问题 所有学生信息以指针的形式存储*/
     vector<student*> studs;
 
 public:
@@ -69,13 +66,13 @@ public:
     vector<student *> search_via_StudentID(const string& studentID);//通过学号查找
     vector<student *> search_via_Result(double result);//通过成绩查找
     vector<student *> search_via_Phone(const string& phone);//通过电话查找
-    //删除学生信息
+    //删除学生信息 实验中用不到 留下接口与实现，暂时不用
     bool delete_via_ID(int id);//通过id删除
     bool delete_via_Name(const string& studentName);//通过姓名删除
     bool delete_via_StudentID(const string& studentID);//通过学号删除
     bool delete_via_Result(double result);//通过成绩删除
     bool delete_via_Phone(const string& phone);//通过电话删除
-    //更改学生信息
+    //更改学生信息 实验中用不到 留下接口与实现，暂时不用
     bool change_via_ID(int id,student * newStudent);//通过id更改
     bool change_via_Name(const string& studentName,student * newStudent);//通过姓名更改
     bool change_via_StudentID(const string& studentID,student * newStudent);//通过学号更改

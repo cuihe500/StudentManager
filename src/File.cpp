@@ -45,10 +45,10 @@ vector<string> File::getAllFiles(const string& paths) {
 }
 
 bool File::writeStudent(classes classes, student stud) {
-    string paths=path+classes.getMajor()+" "+classes.getName();
+    string paths=path+"studentInfo"+"\\"+classes.getMajor()+" "+classes.getName();
     CreateDirectory(paths.c_str(), NULL);
     ofstream ofstream1;
-    ofstream1.open(paths+"\\"+"studentInfo\\"+classes.getName()+" "+stud.getName()+".txt");
+    ofstream1.open(paths+"\\"+classes.getName()+" "+stud.getName()+".txt");
     if(!ofstream1.is_open()){
         return false;
     }
@@ -66,11 +66,11 @@ bool File::writeStudent(classes classes, student stud) {
 bool File::writeAllStudents(classes classes) {
     vector<student *>::iterator it;
     vector<student *> temp = classes.getStuds();
-    string paths=path+classes.getMajor()+" "+classes.getName();
+    string paths=path+"studentInfo\\"+classes.getMajor()+" "+classes.getName();
     CreateDirectory(paths.c_str(), NULL);
     for(it=temp.begin();it!=temp.end();it++) {
         ofstream ofstream1;
-        ofstream1.open(paths+"\\"+"studentInfo\\"+ classes.getName() + " " + (*it)->getName() + ".txt");
+        ofstream1.open(paths+"\\"+classes.getName() + " " + (*it)->getName() + ".txt");
         if (!ofstream1.is_open()) {
             return false;
         }
