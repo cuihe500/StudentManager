@@ -7,6 +7,7 @@
 #include "File.h"
 #include <direct.h>
 #include <map>
+#include<algorithm>
 #define STUDENTMANAGER_WINDOW_H
 
 #define __ONE__ 1

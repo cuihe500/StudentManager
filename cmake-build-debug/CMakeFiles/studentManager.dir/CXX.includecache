@@ -6,18 +6,6 @@
 
 #IncludeRegexTransform: 
 
-D:/c++/studentManager/main.cpp
-iostream
--
-src/head/File.h
-D:/c++/studentManager/src/head/File.h
-direct.h
--
-src/head/window.h
-D:/c++/studentManager/src/head/window.h
-src/head/util.h
-D:/c++/studentManager/src/head/util.h
-
 D:/c++/studentManager/src/head/File.h
 iostream
 -
@@ -36,6 +24,8 @@ D:/c++/studentManager/src/head/util.h
 windows.h
 -
 string
+-
+cstdio
 -
 
 D:/c++/studentManager/src/head/class.h
@@ -62,6 +52,10 @@ iostream
 File.h
 D:/c++/studentManager/src/head/File.h
 direct.h
+-
+map
+-
+algorithm
 -
 
 D:/c++/studentManager/src/window.cpp
